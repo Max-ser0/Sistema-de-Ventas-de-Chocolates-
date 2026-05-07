@@ -8,7 +8,7 @@ Este proyecto consiste en el diseño, implementación y documentación de una ba
 
 ---
 
-## 🛠️ 2. Herramientas Utilizadas
+##  2. Herramientas Utilizadas
 
 ### PostgreSQL
 Es el sistema de gestión de bases de datos (DBMS) relacional de código abierto más avanzado del mundo. En este proyecto, PostgreSQL actúa como el motor que procesa todas las consultas, almacena los datos de forma segura y garantiza la integridad referencial mediante llaves primarias y foráneas.
@@ -21,7 +21,7 @@ Es la herramienta de administración gráfica líder para PostgreSQL. Facilita l
 
 ---
 
-## 📊 3. Modelo Entidad-Relación (ERD)
+##  3. Modelo Entidad-Relación (ERD)
 El diseño lógico es el corazón del proyecto. Se ha estructurado bajo una arquitectura de normalización para evitar la redundancia de datos.
 
 ![Modelo ER](./diagrama_er.png)
@@ -35,7 +35,7 @@ El diseño lógico es el corazón del proyecto. Se ha estructurado bajo una arqu
 
 ---
 
-## 📂 4. Componentes del Proyecto Formativo
+##  4. Componentes del Proyecto Formativo
 Para que este proyecto sea considerado de nivel profesional, incluye:
 
 1.  **Script de Estructura (DDL):** Definición de tablas con sus tipos de datos correctos (`SERIAL`, `VARCHAR`, `TIMESTAMP`).
@@ -46,7 +46,7 @@ Para que este proyecto sea considerado de nivel profesional, incluye:
 
 ---
 
-## 🚀 5. Instrucciones de Ejecución
+##  5. Instrucciones de Ejecución
 Siga estos pasos para replicar el ambiente en su equipo local:
 
 1.  **Descarga:** Descargue el archivo `respaldo_chocolateria.sql` de este repositorio.
@@ -59,5 +59,22 @@ Siga estos pasos para replicar el ambiente en su equipo local:
 
 ---
 
-## 🎓 6. Conclusiones
+##  6. Conclusiones
 El uso de PostgreSQL y pgAdmin permite escalar este sistema desde una pequeña tienda local hasta una franquicia nacional. La correcta implementación del modelo relacional garantiza que el sistema sea fácil de mantener y que la información de ventas sea siempre precisa.
+
+## 🔍 7. Consultas de Gestión 
+
+Para demostrar la utilidad del sistema, se han diseñado consultas SQL avanzadas que permiten extraer métricas clave del negocio directamente desde pgAdmin:
+
+### A. Reporte de Inventario por Categoría
+Esta consulta permite saber cuántos productos tenemos y cuál es el valor de nuestro inventario actual agrupado por tipo de chocolate.
+```sql
+SELECT 
+    cat.nombre_categoria AS Categoria,
+    COUNT(c.chocolate_id) AS Total_Productos,
+    SUM(c.stock) AS Unidades_Disponibles,
+    SUM(c.stock * c.precio) AS Valor_Inventario_Total
+FROM chocolates c
+JOIN categorias cat ON c.categoria_id = cat.categoria_id
+GROUP BY cat.nombre_categoria
+ORDER BY Valor_Inventario_Total DESC;
