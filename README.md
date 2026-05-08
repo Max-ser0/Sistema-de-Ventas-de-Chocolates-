@@ -94,10 +94,13 @@ Un detalle corresponde a un chocolate
 
 CHOCOLATES (1) ──── (N) DETALLE_VENTAS.
 
-![Modelo ER](./DiagramaEntiidadRelacion.png).
+![Modelo ER](./DiagramaEntiidadRelacion.png)
 
 
 ![Modelo ER](./diagrama_er.png)
+
+![Modelo ER](./diagramarelacional2.png)
+
 
 ### Explicación del Esquema:
 1.  **Categorías:** Clasifica los chocolates (Amargos, Blancos, etc.).
@@ -105,6 +108,8 @@ CHOCOLATES (1) ──── (N) DETALLE_VENTAS.
 3.  **Clientes:** Registro de datos de contacto únicos.
 4.  **Ventas:** Cabecera que registra el total de la compra y la fecha.
 5.  **Detalle de Ventas:** Tabla intermedia que permite que una sola venta contenga múltiples tipos de chocolates.
+
+---
 
 ---
 
