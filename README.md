@@ -15,12 +15,12 @@ Este proyecto consiste en el diseño, implementación y documentación de una ba
 
 ---
 3. Objetivos
-Diseñar un modelo de datos estructurado y normalizado
-Implementar una base de datos en PostgreSQL
-Representar el sistema mediante diagramas ER y relacional
-Simular un entorno real mediante inserción de datos
+Diseñar un modelo de datos estructurado y normalizado.
+  - Implementar una base de datos en PostgreSQL.
+  - Representar el sistema mediante diagramas ER y relacional.
+  - Simular un entorno real mediante inserción de datos.
 
-##  2. Herramientas Utilizadas
+##  4. Herramientas Utilizadas
 
 ### PostgreSQL
 Es el sistema de gestión de bases de datos (DBMS) relacional de código abierto más avanzado del mundo. En este proyecto, PostgreSQL actúa como el motor que procesa todas las consultas, almacena los datos de forma segura y garantiza la integridad referencial mediante llaves primarias y foráneas.
@@ -33,8 +33,66 @@ Es la herramienta de administración gráfica líder para PostgreSQL. Facilita l
 
 ---
 
-##  3. Modelo Entidad-Relación (ERD)
+##  5. Modelo Entidad-Relación (ERD)
 El diseño lógico es el corazón del proyecto. Se ha estructurado bajo una arquitectura de normalización para evitar la redundancia de datos.
+
+ENTIDADES Y ATRIBUTOS
+CATEGORIAS
+categoria_id (PK)
+nombre_categoria
+
+CHOCOLATES
+chocolate_id (PK)
+nombre
+descripcion
+precio
+stock
+categoria_id (FK)
+
+CLIENTES
+cliente_id (PK)
+nombre_completo
+email (UNIQUE)
+telefono
+
+VENTAS
+venta_id (PK)
+fecha_venta
+cliente_id (FK)
+total_venta
+
+DETALLE_VENTAS
+detalle_id (PK)
+venta_id (FK)
+chocolate_id (FK)
+cantidad
+precio_unitario
+
+RELACIONES 
+1. CATEGORIAS → CHOCOLATES
+Tipo 1 a N
+Una categoría tiene muchos chocolates
+Un chocolate pertenece a una categoría
+
+CATEGORIAS (1) ──── (N) CHOCOLATES
+2. CLIENTES → VENTAS
+Tipo 1 a N
+Un cliente puede hacer muchas ventas
+Una venta pertenece a un cliente
+
+CLIENTES (1) ──── (N) VENTAS
+3. VENTAS → DETALLE_VENTAS
+Tipo 1 a N
+Una venta tiene muchos detalles
+Un detalle pertenece a una venta
+
+VENTAS (1) ──── (N) DETALLE_VENTAS
+4. CHOCOLATES → DETALLE_VENTAS
+Tipo 1 a N
+Un chocolate puede estar en muchos detalles
+Un detalle corresponde a un chocolate
+
+CHOCOLATES (1) ──── (N) DETALLE_VENTAS
 
 ![Modelo ER](./diagrama_er.png)
 
