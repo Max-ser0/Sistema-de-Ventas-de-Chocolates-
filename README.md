@@ -94,7 +94,7 @@ Un detalle corresponde a un chocolate
 
 CHOCOLATES (1) ──── (N) DETALLE_VENTAS.
 
-![Modelo ER](./Diagrama Entiidad relacion.png):
+![Modelo ER](./Diagrama$Entiidad$relacion.png).
 
 
 ![Modelo ER](./diagrama_er.png)
