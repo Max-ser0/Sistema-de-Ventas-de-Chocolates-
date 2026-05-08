@@ -1,12 +1,24 @@
 # Sistema-de-Ventas-de-Chocolates-
 Base de datos relacional para la gestión de inventario y ventas de una chocolatería, desarrollada en PostgreSQL
 
+1. Descripción del Proyecto
+
+Este proyecto consiste en el diseño e implementación de una base de datos relacional para la gestión de ventas de chocolates. Permite administrar información sobre productos, categorías, clientes y transacciones de venta.
+
+El sistema está orientado a representar correctamente relaciones entre entidades, aplicando principios de modelado Entidad-Relación (ER) y su transformación al modelo relacional en PostgreSQL.
+
+
 # 🍫 Sistema de Gestión "ChocoAdmin" - Proyecto Formativo
 
-## 📝 1. Introducción al Proyecto
+2. Introducción al Proyecto
 Este proyecto consiste en el diseño, implementación y documentación de una base de datos relacional para una chocolatería artesanal. El objetivo es centralizar la información de productos, clientes y transacciones para optimizar la toma de decisiones y el control de inventario.
 
 ---
+3. Objetivos
+Diseñar un modelo de datos estructurado y normalizado
+Implementar una base de datos en PostgreSQL
+Representar el sistema mediante diagramas ER y relacional
+Simular un entorno real mediante inserción de datos
 
 ##  2. Herramientas Utilizadas
 
