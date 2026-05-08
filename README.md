@@ -36,63 +36,66 @@ Es la herramienta de administración gráfica líder para PostgreSQL. Facilita l
 ##  5. Modelo Entidad-Relación (ERD)
 El diseño lógico es el corazón del proyecto. Se ha estructurado bajo una arquitectura de normalización para evitar la redundancia de datos.
 
-ENTIDADES Y ATRIBUTOS
-CATEGORIAS
-categoria_id (PK)
-nombre_categoria
+ENTIDADES Y ATRIBUTOS.
+CATEGORIAS:
+ - categoria_id (PK).
+ - nombre_categoria.
 
-CHOCOLATES
-chocolate_id (PK)
-nombre
-descripcion
-precio
-stock
-categoria_id (FK)
+CHOCOLATES:
+ - chocolate_id (PK)
+ - nombre
+ - descripcion
+ - precio
+ - stock
+ - categoria_id (FK)
 
-CLIENTES
-cliente_id (PK)
-nombre_completo
-email (UNIQUE)
-telefono
+CLIENTES:
+ - cliente_id (PK)
+ - nombre_completo
+ - email (UNIQUE)
+ - telefono
 
-VENTAS
-venta_id (PK)
-fecha_venta
-cliente_id (FK)
-total_venta
+VENTAS:
+ - venta_id (PK)
+ - fecha_venta
+ - cliente_id (FK)
+ - total_venta
 
-DETALLE_VENTAS
-detalle_id (PK)
-venta_id (FK)
-chocolate_id (FK)
-cantidad
-precio_unitario
+DETALLE_VENTAS:
+ - detalle_id (PK) 
+ - venta_id (FK)
+ - chocolate_id (FK)
+ - cantidad
+ - precio_unitario
 
-RELACIONES 
-1. CATEGORIAS → CHOCOLATES
-Tipo 1 a N
+RELACIONES:
+1. CATEGORIAS → CHOCOLATES.
+Tipo 1 a N.
 Una categoría tiene muchos chocolates
 Un chocolate pertenece a una categoría
 
-CATEGORIAS (1) ──── (N) CHOCOLATES
-2. CLIENTES → VENTAS
-Tipo 1 a N
+CATEGORIAS (1) ──── (N) CHOCOLATES.
+2. CLIENTES → VENTAS.
+Tipo 1 a N.
 Un cliente puede hacer muchas ventas
 Una venta pertenece a un cliente
 
-CLIENTES (1) ──── (N) VENTAS
-3. VENTAS → DETALLE_VENTAS
-Tipo 1 a N
+CLIENTES (1) ──── (N) VENTAS.
+3. VENTAS → DETALLE_VENTAS.
+Tipo 1 a N.
 Una venta tiene muchos detalles
 Un detalle pertenece a una venta
 
-VENTAS (1) ──── (N) DETALLE_VENTAS
-4. CHOCOLATES → DETALLE_VENTAS
-Tipo 1 a N
+VENTAS (1) ──── (N) DETALLE_VENTAS.
+4. CHOCOLATES → DETALLE_VENTAS.
+Tipo 1 a N.
 Un chocolate puede estar en muchos detalles
 Un detalle corresponde a un chocolate
 
-CHOCOLATES (1) ──── (N) DETALLE_VENTAS
+CHOCOLATES (1) ──── (N) DETALLE_VENTAS.
+
+![Modelo ER](./Diagrama Entiidad relacion.png).
+
 
 ![Modelo ER](./diagrama_er.png)
 
